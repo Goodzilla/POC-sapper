@@ -41,6 +41,6 @@
   }
 </style>
 
-<div bind:this={container}>
-  <slot {intersecting} />
+<div bind:this="{container}">
+  <slot intersecting="{intersecting}" />
 </div>

@@ -37,7 +37,7 @@
 
 <ul>
   {#each $contentList as storeContent, i}
-    <Content content={storeContent} isSSR={i < 5} />
+    <Content content="{storeContent}" isSSR="{i < 5}" />
   {/each}
   <PageLoader />
 </ul>

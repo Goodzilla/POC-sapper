@@ -30,11 +30,12 @@
 {#if currentPage < LAST_PAGE}
   <IntersectionObserver
     let:intersecting
-    top={100}
-    on:intersect={() => {
+    top="{100}"
+    on:intersect="{() => {
       currentPage++;
       getNextPage();
-    }} />
+    }}"
+  />
 {:else}
   <div>Fin des contenus (10 pages)</div>
 {/if}

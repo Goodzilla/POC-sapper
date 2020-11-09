@@ -28,4 +28,11 @@
   }
 </style>
 
-<img {src} {alt} {height} {width} class:loaded bind:this={thisImage} />
+<img
+  src="{src}"
+  alt="{alt}"
+  height="{height}"
+  width="{width}"
+  class:loaded
+  bind:this="{thisImage}"
+/>

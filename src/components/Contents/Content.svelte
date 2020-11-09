@@ -9,9 +9,10 @@
 
 <li>
   <ImageLoader
-    src={content.download_url}
+    src="{content.download_url}"
     alt="Photo by {content.author}"
-    height={content.height}
-    width={content.width}
-    {isSSR} />
+    height="{content.height}"
+    width="{content.width}"
+    isSSR="{isSSR}"
+  />
 </li>
