@@ -9,8 +9,8 @@
     "start": "node __sapper__/build",
     "format": "prettier --write ./**/*.{js,svelte,md,html,css,json}",
     "prelint": "npm run format",
-    "lint": "eslint './**/*.{js,svelte}'",
-    "lint:fix": "eslint --fix './**/*.{js,svelte}'",
+    "lint": "eslint ./**/*.{js,svelte}",
+    "lint:fix": "eslint --fix ./**/*.{js,svelte}",
     "pretest": "npm run lint"
   },
   "dependencies": {

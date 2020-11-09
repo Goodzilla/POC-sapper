@@ -1,7 +1,7 @@
 <script context="module">
   import { contentList } from "../stores.js";
 
-  export async function preload(page, session) {
+  export async function preload() {
     const currentPage = 1;
     const limit = 10;
 
