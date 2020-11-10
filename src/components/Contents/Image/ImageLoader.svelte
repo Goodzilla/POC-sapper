@@ -5,21 +5,12 @@
   export let width;
   export let isSSR = false;
 
-  import { onMount } from 'svelte';
   import IntersectionObserver from '../../IntersectionObserver.svelte';
   import Image from './Image.svelte';
-
-  let nativeLoading = false;
-  // Determine whether to bypass our intersecting check
-  onMount(() => {
-    if ('loading' in HTMLImageElement.prototype) {
-      nativeLoading = true;
-    }
-  });
 </script>
 
 <IntersectionObserver once="{true}" let:intersecting>
-  {#if intersecting || isSSR || nativeLoading}
+  {#if intersecting || isSSR}
     <Image
       alt="{alt}"
       src="{src}"

@@ -35,5 +35,4 @@
   width="{width}"
   class:loaded
   bind:this="{thisImage}"
-  loading="lazy"
 />
