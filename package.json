@@ -52,7 +52,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*.{js, svelte}": "eslint --cache --fix",
     "*.{js,svelte,md,html,css,json}": "prettier --write"
   }
 }

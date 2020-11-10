@@ -2,17 +2,21 @@
   export let content;
   export let isSSR = false;
   import ImageLoader from './Image/ImageLoader.svelte';
-</script>
 
-<style>
-</style>
+  const newWidth = 320;
+  let newHeight = Math.floor(content.height * (newWidth / content.width));
+  let compressedSrc = content.download_url.replace(
+    `${content.width}/${content.height}`,
+    `${newWidth}/${newHeight}.webp`
+  );
+</script>
 
 <li>
   <ImageLoader
-    src="{content.download_url}"
+    src="{compressedSrc}"
     alt="Photo by {content.author}"
-    height="{content.height}"
-    width="{content.width}"
+    height="{newHeight}"
+    width="{newWidth}"
     isSSR="{isSSR}"
   />
 </li>

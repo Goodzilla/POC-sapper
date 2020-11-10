@@ -20,11 +20,7 @@
   img {
     width: 100%;
     height: auto;
-    opacity: 0;
-    transition: opacity 200ms ease-out;
-  }
-  img.loaded {
-    opacity: 1;
+    background: lightgray;
   }
 </style>
 

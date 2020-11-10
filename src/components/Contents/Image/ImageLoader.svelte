@@ -9,16 +9,12 @@
   import Image from './Image.svelte';
 </script>
 
-<IntersectionObserver once="{true}" let:intersecting>
-  {#if intersecting || isSSR}
-    <Image
-      alt="{alt}"
-      src="{src}"
-      height="{height}"
-      width="{width}"
-      loaded="{isSSR}"
-    />
-  {:else}
-    <div>Not in viewport yet...</div>
-  {/if}
+<IntersectionObserver once="{true}" let:intersecting top="{200}">
+  <Image
+    alt="{alt}"
+    src="{intersecting || isSSR ? src : ''}"
+    height="{height}"
+    width="{width}"
+    loaded="{isSSR}"
+  />
 </IntersectionObserver>
