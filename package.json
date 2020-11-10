@@ -11,10 +11,13 @@
     "prelint": "npm run format",
     "lint": "eslint ./**/*.{js,svelte}",
     "lint:fix": "eslint --fix ./**/*.{js,svelte}",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "cypress": "^5.6.0",
     "polka": "next",
     "sirv": "^1.0.0"
   },
