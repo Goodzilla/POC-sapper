@@ -1,5 +1,5 @@
 <script>
-  import { onMount, createEventDispatcher } from "svelte";
+  import { onMount, createEventDispatcher } from 'svelte';
   export let once = false;
   export let top = 0;
   export let bottom = 0;
@@ -12,13 +12,13 @@
   let container;
 
   onMount(() => {
-    if (typeof IntersectionObserver !== "undefined") {
+    if (typeof IntersectionObserver !== 'undefined') {
       const rootMargin = `${bottom}px ${left}px ${top}px ${right}px`;
       const observer = new IntersectionObserver(
         (entries) => {
           intersecting = entries[0].isIntersecting;
           if (intersecting) {
-            dispatch("intersect");
+            dispatch('intersect');
             if (once) {
               observer.unobserve(container);
             }

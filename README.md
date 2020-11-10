@@ -100,7 +100,7 @@ The [static](static) directory contains static assets that should be served publ
 The default [service-worker.js](src/service-worker.js) will preload and cache these files, by retrieving a list of `files` from the generated manifest:
 
 ```js
-import { files } from "@sapper/service-worker";
+import { files } from '@sapper/service-worker';
 ```
 
 If you have static files you do not want to cache, you should exclude them from this list after importing it (and before passing it to `cache.addAll`).

@@ -1,7 +1,7 @@
 <script>
   export let content;
   export let isSSR = false;
-  import ImageLoader from "./Image/ImageLoader.svelte";
+  import ImageLoader from './Image/ImageLoader.svelte';
 </script>
 
 <style>

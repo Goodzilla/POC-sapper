@@ -1,5 +1,5 @@
 <script context="module">
-  import { contentList } from "../stores.js";
+  import { contentList } from '../stores.js';
 
   export async function preload() {
     const currentPage = 1;
@@ -15,15 +15,15 @@
       return { contents };
     }
 
-    this.error(404, "Not found");
+    this.error(404, 'Not found');
   }
 </script>
 
 <script>
   export let contents = [];
 
-  import PageLoader from "../components/PageLoader.svelte";
-  import Content from "../components/Contents/Content.svelte";
+  import PageLoader from '../components/PageLoader.svelte';
+  import Content from '../components/Contents/Content.svelte';
 
   contentList.set(contents);
 </script>

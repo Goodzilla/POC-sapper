@@ -1,27 +1,27 @@
 module.exports = {
-  extends: ["eslint:recommended", "prettier"],
+  extends: ['eslint:recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module",
+    sourceType: 'module',
   },
   env: {
     es6: true,
     browser: true,
     node: true,
   },
-  plugins: ["svelte3"],
+  plugins: ['svelte3'],
   overrides: [
     {
-      files: ["*.svelte"],
-      processor: "svelte3/svelte3",
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3',
     },
     {
-      extends: ["plugin:cypress/recommended"],
-      files: ["cypress/**/*"],
+      extends: ['plugin:cypress/recommended'],
+      files: ['cypress/**/*'],
       env: {
-        "cypress/globals": true,
+        'cypress/globals': true,
       },
-      plugins: ["cypress"],
+      plugins: ['cypress'],
     },
   ],
 };

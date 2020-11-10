@@ -1,6 +1,6 @@
 <script>
-  import { contentList } from "../stores.js";
-  import IntersectionObserver from "./IntersectionObserver.svelte";
+  import { contentList } from '../stores.js';
+  import IntersectionObserver from './IntersectionObserver.svelte';
 
   const LAST_PAGE = 10;
   const FIRST_PAGE = 1;

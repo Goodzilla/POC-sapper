@@ -4,7 +4,7 @@
   export let height;
   export let width;
 
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   let loaded = false;
   let thisImage;
