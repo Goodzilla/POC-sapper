@@ -5,6 +5,7 @@
   export let bottom = 0;
   export let left = 0;
   export let right = 0;
+  export let classes = '';
 
   const dispatch = createEventDispatcher();
 
@@ -41,6 +42,6 @@
   }
 </style>
 
-<div bind:this="{container}">
+<div bind:this="{container}" class="{classes}">
   <slot intersecting="{intersecting}" />
 </div>

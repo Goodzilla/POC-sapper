@@ -31,6 +31,7 @@
   <IntersectionObserver
     let:intersecting
     top="{100}"
+    classes="page-loader"
     on:intersect="{() => {
       currentPage++;
       getNextPage();

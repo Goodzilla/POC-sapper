@@ -3,10 +3,10 @@
   export let alt;
   export let height;
   export let width;
+  export let loaded = false;
 
   import { onMount } from 'svelte';
 
-  let loaded = false;
   let thisImage;
 
   onMount(() => {
@@ -35,4 +35,5 @@
   width="{width}"
   class:loaded
   bind:this="{thisImage}"
+  loading="lazy"
 />
