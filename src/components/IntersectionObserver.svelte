@@ -15,11 +15,14 @@
   onMount(() => {
     if (typeof IntersectionObserver !== 'undefined') {
       const rootMargin = `${bottom}px ${left}px ${top}px ${right}px`;
+
       const observer = new IntersectionObserver(
         (entries) => {
           intersecting = entries[0].isIntersecting;
+
           if (intersecting) {
             dispatch('intersect');
+
             if (once) {
               observer.unobserve(container);
             }
@@ -29,13 +32,14 @@
           rootMargin,
         }
       );
+
       observer.observe(container);
       return () => observer.unobserve(container);
     }
   });
 </script>
 
-<style>
+<style lang="scss">
   div {
     width: 100%;
     height: 100%;

@@ -23,13 +23,10 @@
   export let contents = [];
 
   import PageLoader from '../components/PageLoader.svelte';
-  import Content from '../components/Contents/Content.svelte';
+  import Content from '../components/Content.svelte';
 
   contentList.set(contents);
 </script>
-
-<style>
-</style>
 
 <svelte:head>
   <title>POC Phoenix</title>

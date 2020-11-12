@@ -5,7 +5,7 @@
   export let width;
   export let isSSR = false;
 
-  import IntersectionObserver from '../../IntersectionObserver.svelte';
+  import IntersectionObserver from '../IntersectionObserver.svelte';
   import Image from './Image.svelte';
 </script>
 

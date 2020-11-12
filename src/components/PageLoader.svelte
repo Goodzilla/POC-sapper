@@ -24,9 +24,6 @@
   }
 </script>
 
-<style>
-</style>
-
 {#if currentPage < LAST_PAGE}
   <IntersectionObserver
     let:intersecting
