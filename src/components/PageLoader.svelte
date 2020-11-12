@@ -1,11 +1,10 @@
 <script>
   import { contentList } from '../stores.js';
-  import IntersectionObserver from './IntersectionObserver.svelte';
+  import IntersectionObserver from './utils/IntersectionObserver.svelte';
 
   const LAST_PAGE = 10;
-  const FIRST_PAGE = 1;
   const ITEMS_PER_PAGE = 10;
-  let currentPage = FIRST_PAGE;
+  let currentPage = 1;
 
   async function getNextPage() {
     if (process.browser) {
