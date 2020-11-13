@@ -22,8 +22,8 @@
 <script>
   export let contents = [];
 
-  import PageLoader from '../components/PageLoader.svelte';
-  import Content from '../components/Content.svelte';
+  import PageLoader from '../components/organisms/PageLoader.svelte';
+  import Content from '../components/molecules/Content.svelte';
 
   contentList.set(contents);
 </script>
@@ -34,7 +34,7 @@
 
 <ul>
   {#each $contentList as storeContent, i}
-    <Content content="{storeContent}" isSSR="{i < 5}" />
+    <Content content="{storeContent}" isLazy="{i < 5}" />
   {/each}
   <PageLoader />
 </ul>

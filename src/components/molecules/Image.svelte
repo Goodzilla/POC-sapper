@@ -1,16 +1,19 @@
 <script>
-  import { onMount, createEventDispatcher } from 'svelte';
-  export let once = false;
+  export let src;
+  export let alt;
+  export let height;
+  export let width;
+  export let loaded = false;
+  export let isLazy = true;
   export let top = 0;
   export let bottom = 0;
   export let left = 0;
   export let right = 0;
-  export let classes = '';
 
-  const dispatch = createEventDispatcher();
+  import { onMount } from 'svelte';
 
+  let thisImage;
   let intersecting = false;
-  let container;
 
   onMount(() => {
     if (typeof IntersectionObserver !== 'undefined') {
@@ -21,11 +24,7 @@
           intersecting = entries[0].isIntersecting;
 
           if (intersecting) {
-            dispatch('intersect');
-
-            if (once) {
-              observer.unobserve(container);
-            }
+            observer.unobserve(thisImage);
           }
         },
         {
@@ -33,19 +32,29 @@
         }
       );
 
-      observer.observe(container);
-      return () => observer.unobserve(container);
+      observer.observe(thisImage);
+      return () => observer.unobserve(thisImage);
     }
+
+    thisImage.onload = () => {
+      loaded = true;
+    };
   });
 </script>
 
 <style lang="scss">
-  div {
+  img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    background: lightgray;
   }
 </style>
 
-<div bind:this="{container}" class="{classes}">
-  <slot intersecting="{intersecting}" />
-</div>
+<img
+  src="{intersecting || !isLazy ? src : ''}"
+  alt="{alt}"
+  height="{height}"
+  width="{width}"
+  class:loaded
+  bind:this="{thisImage}"
+/>

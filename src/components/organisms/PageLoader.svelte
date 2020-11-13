@@ -1,6 +1,6 @@
 <script>
-  import { contentList } from '../stores.js';
-  import IntersectionObserver from './utils/IntersectionObserver.svelte';
+  import { contentList } from '../../stores.js';
+  import IntersectionObserver from '../molecules/IntersectionObserver.svelte';
 
   const LAST_PAGE = 10;
   const ITEMS_PER_PAGE = 10;
@@ -27,7 +27,6 @@
   <IntersectionObserver
     let:intersecting
     top="{100}"
-    classes="page-loader"
     on:intersect="{() => {
       currentPage++;
       getNextPage();

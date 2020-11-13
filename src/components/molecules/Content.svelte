@@ -1,7 +1,7 @@
 <script>
   export let content;
-  export let isSSR = false;
-  import ImageLoader from './image/ImageLoader.svelte';
+  export let isLazy = false;
+  import Image from './Image.svelte';
 
   const newWidth = 320;
   let newHeight = Math.floor(content.height * (newWidth / content.width));
@@ -12,11 +12,11 @@
 </script>
 
 <li>
-  <ImageLoader
+  <Image
     src="{compressedSrc}"
     alt="Photo by {content.author}"
     height="{newHeight}"
     width="{newWidth}"
-    isSSR="{isSSR}"
+    isLazy="{isLazy}"
   />
 </li>
